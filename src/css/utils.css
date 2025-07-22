@@ -1,0 +1,27 @@
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.rounded {
+    border-radius: 5%;
+}
+
+.d-none {
+    display: none;
+}
+
+.margin-top-5 {
+    margin-top: 5rem;
+}
+
+.margin-top-1 {
+    margin-top: 1rem;
+}
