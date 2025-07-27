@@ -28,7 +28,13 @@ This Code of Conduct applies to all project spaces, including online platforms, 
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project maintainer via [LinkedIn](https://www.linkedin.com/in/anuragvishwakarma/). For privacy, please use LinkedIn’s private messaging feature. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the project maintainer through any of the following methods:
+
+- **Email:** 21brac0401@polygwalior.ac.in
+- **Discord Username:** vishanurag
+- **LinkedIn:** [https://linkedin.com/in/anuragvishwakarma/](https://linkedin.com/in/anuragvishwakarma/)
+
+For privacy, please use direct/private messaging when possible. All complaints will be reviewed and investigated promptly and fairly.
 
 Project maintainers are obligated to respect the privacy and security of the reporter of any incident.
 
