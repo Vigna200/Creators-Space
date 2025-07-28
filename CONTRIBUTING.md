@@ -71,3 +71,14 @@ A project maintainer will review your pull request.
 You may be asked to make changes — don’t worry, that’s part of the collaborative process.
 
 Once approved, your code will be merged into the main branch.
+
+## To run locally
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/Creators-Space.git
+cd Creators-Space
+
+# Open in browser
+Open index.html in your preferred web browser
+```
