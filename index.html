@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./src/css/responsive.css">
 </head>
 
-<body class="overflow-x-hidden">
+<body id="main-body" class="overflow-x-hidden">
     <div class="navbar">
         <h1><a href="./">
           <img width="80px" src="./assets/images/logo-nav.png" alt="logo Anurag Vishwakarma's Creators-Space">
@@ -25,7 +25,7 @@
             <a href="#">Services</a>
             <a href="#">Internship</a>
             <a href="#">Campus Ambassador</a>
-            <a href="#">Blog</a>
+            <a href="#">Blog</a> 
             <a href="" class="btn login">Log In</a>
             <a href="" class="btn signup">Sign Up</a>
         </div>
@@ -48,6 +48,13 @@
 
         </div>
     </div>
+
+  <div class="toggle-switch">
+    <label class="switch-label">
+      <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
+      <span class="slider"></span>
+    </label>
+  </div>  
 
     <div class="main margin-top-mv-3">
         <h1>Welcome to the future of tech learning...</h1>
@@ -80,7 +87,7 @@
                 
               </div>
             </div>
-          </section>
+        </section>
 
           
         <section id="courses">
@@ -216,5 +223,7 @@
     <script src="./src/js/hero-section.js"></script>
     <script src="./src/js/navbar.js"></script>
     <script src="./src/js/slider.js"></script>
+    <script src="./src/js/utils.js"></script>
+   
 </body>
 </html>
