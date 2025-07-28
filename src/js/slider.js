@@ -1,35 +1,35 @@
 const testimonials = [
-    {
-        img: 'assets/images/sumit-r.jpg',
-        name: 'Sumit R.',
-        position: 'Founding Member & CEO @ Creator-Space',
-        message: 'Sumit Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet'
-    },
-    {
-        img: 'assets/images/userIcon_Square.png',
-        name: 'Himanshu S.K.',
-        position: 'Founding Member @ Creator-Space',
-        message: 'Himanshu Lorem ipsum donor sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet'
-    },
-    {
-        img: 'assets/images/anurag-v.jpg',
-        name: 'Anurag V.',
-        position: 'Founding Member & Dev @ Creator-Space',
-        message: 'Anurag Lorem ipsum donor sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet'
-    },
-    {
-        img: 'assets/images/userIcon_Square.png',
-        name: 'Anuj S.',
-        position: 'Founding Member & CTO @ Creator-Space',
-        message: 'Lorem ipsum donor sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet'
-    },
-    {
-        img: 'assets/images/userIcon_Square.png',
-        name: 'Mr. PQR 😅',
-        position: 'Miscellaneous @ Creator-Space',
-        message: 'Lorem ipsum donor sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet.Lorem ipsum doner sit amet'
-    }
-  ];
+  {
+    img: 'assets/images/sumit-r.jpg',
+    name: 'Sumit R.',
+    position: 'Founding Member & CEO @ Creator-Space',
+    message: 'Creator Space has transformed the way I collaborate and innovate. The community is vibrant and the resources are top-notch!'
+  },
+  {
+    img: 'assets/images/userIcon_Square.png',
+    name: 'Himanshu S.K.',
+    position: 'Founding Member @ Creator-Space',
+    message: 'Being a part of Creator Space has been an amazing journey. The support and networking opportunities are unmatched.'
+  },
+  {
+    img: 'assets/images/anurag-v.jpg',
+    name: 'Anurag V.',
+    position: 'Founding Member & Dev @ Creator-Space',
+    message: 'I have grown so much as a developer thanks to the workshops and mentorship at Creator Space. Highly recommended!'
+  },
+  {
+    img: 'assets/images/userIcon_Square.png',
+    name: 'Anuj S.',
+    position: 'Founding Member & CTO @ Creator-Space',
+    message: 'The collaborative environment at Creator Space pushes everyone to do their best work. Proud to be a part of this team.'
+  },
+  {
+    img: 'assets/images/userIcon_Square.png',
+    name: 'Mr.Anand Singh',
+    position: 'Miscellaneous @ Creator-Space',
+    message: 'Creator Space is the perfect place to turn ideas into reality. The encouragement and feedback from the community are invaluable.'
+  }
+];
 
   let currentTestimonial = 1;
 
