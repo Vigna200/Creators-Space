@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     img: 'assets/images/userIcon_Square.png',
-    name: 'Mr.Anand Singh',
+    name: 'Mr. PQR 😅',
     position: 'Miscellaneous @ Creator-Space',
     message: 'Creator Space is the perfect place to turn ideas into reality. The encouragement and feedback from the community are invaluable.'
   }
