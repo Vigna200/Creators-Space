@@ -380,6 +380,14 @@ body {
     border-radius: 50%;
     background-color: white;
     border: 1px solid white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social svg:hover {
+    transform: scale(1.05);
+    background-color: rgba(245, 244, 244, 0.466);
+    border: 1px solid rgba(245, 244, 244, 0.466);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .footer .contact {
