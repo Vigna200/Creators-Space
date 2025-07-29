@@ -471,6 +471,28 @@ body {
         font-size: 14px;
       }
 
+/* Scroll to top */
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  font-size: 20px;
+  background-color: #6f6f6b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#scrollTopBtn:hover {
+  background-color: #333;
+}
+
+
 /* Dark Mode Switch Styles  */
 .toggle-switch {
   position: relative;
@@ -597,4 +619,5 @@ body.dark .testimonial-card {
   background-color: #fff;
   color: #222;
 }
+
 
