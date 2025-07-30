@@ -33,11 +33,14 @@ body {
   margin: 10px;
   transition: color 0.3s;
   display: flex;
-  display: inline-block;
   position: relative;
 }
 
-.navbar a:nth-child(-n + 6)::after {
+.navbar .nav-links a {
+    display: inline-block;
+}
+
+.navbar .nav-links a:nth-child(-n + 6)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -48,7 +51,7 @@ body {
   transition: width 0.4s ease;
 }
 
-.navbar a:nth-child(-n + 6):hover::after {
+.navbar .nav-links a:nth-child(-n + 6):hover::after {
   width: 100%;
 }
 
