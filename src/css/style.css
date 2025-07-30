@@ -13,15 +13,23 @@ body {
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
-  padding: 10px;
+  padding: 15px 30px;
+  height: 85px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .navbar h1 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   color: black;
   margin-left: 10px;
@@ -37,7 +45,12 @@ body {
 }
 
 .navbar .nav-links a {
-    display: inline-block;
+  color: #2c3e50;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
 }
 
 .navbar .nav-links a:nth-child(-n + 6)::after {
@@ -48,38 +61,52 @@ body {
   height: 1.5px;
   width: 0%;
   background-color: rgba(0, 0, 0, 0.889);
-  transition: width 0.4s ease;
+  transition: width 0.3s ease;
 }
 
 .navbar .nav-links a:nth-child(-n + 6):hover::after {
   width: 100%;
 }
 
-.navbar a.btn {
+.navbar .btn.login {
   border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
   outline: none;
-  background-color: white;
-  padding: 10px 20px;
+  background-color: transparent;
+  padding: 8px 16px;
   cursor: pointer;
   border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;
+  font-weight: 500;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar a.btn:hover {
+.navbar .btn.login:hover {
   background-color: black;
   color: white;
 }
 
-.navbar a.signup {
-  background-color: black;
-  color: white;
+.navbar .btn.signup {
+  border: 1px solid black;
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  background-color: transparent;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+  
 }
 
-.navbar a.signup:hover {
-  background-color: white;
-  color: black;
+.navbar .btn.signup:hover {
+  background-color: black;
+  color: white;
 }
 
 .navbar .nav-links {
@@ -601,7 +628,10 @@ body.dark .support a {
 
 /* Dark mode for navbar */
 body.dark .navbar {
-  background-color: #222;
+  background-color: rgba(24,24,24,0.6);
+  border: 1px solid #444;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 body.dark .navbar h1,
 body.dark .navbar a {
@@ -615,6 +645,20 @@ body.dark .navbar a.btn {
 body.dark .navbar a.btn:hover {
   background-color: #fff;
   color: #222;
+}
+/* White underline for nav links in dark mode */
+body.dark .navbar .nav-links a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: white;
+  transition: width 0.3s ease;
+  width: 0;
+}
+
+body.dark .navbar .nav-links a:hover::after,
+body.dark .navbar .nav-links a.active::after {
+  width: 100%;
 }
 
 /* Dark mode for main section */
