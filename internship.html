@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internships | Creators-Space</title>
+ <link rel="stylesheet" href="./src/css/courses.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+      <link rel="stylesheet" href="./src/css/style.css">
+          <link rel="stylesheet" href="./src/css/internship.css">
+          </head>
+ <body id="main-body" class="overflow-x-hidden">
+    <!-- Navbar -->
+    <div class="navbar">
+      <h1>
+        <a href="./">
+          <img
+            width="80px"
+            src="./assets/images/logo-nav.png"
+            alt="logo Anurag Vishwakarma's Creators-Space"
+          />
+          <br />Creators-Space</a
+        >
+      </h1>
+      <div class="nav-links align-items-center" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="#">Services</a>
+        <a href="internship.html">Internship</a>
+        <a href="#">Campus Ambassador</a>
+        <a href="#">Blog</a>
+        <a href="login.html" class="btn login">Log In</a>
+        <a href="signup.html" class="btn signup">Sign Up</a>
+      </div>
+    </div>
+
+
+  <!-- Dark Mode Toggle -->
+  <div class="toggle-switch">
+    <label class="switch-label">
+      <input type="checkbox" class="checkbox" id="dark-mode-toggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+<!-- MAIN SECTION -->
+  <section class="main">
+    <h1>Exciting Internship Opportunities</h1>
+    <p>Launch your career with hands-on experience from top organizations.</p>
+  </section>
+
+  <!-- INTERNSHIP CARDS -->
+  <div class="courses-container">
+  <div class="card">
+    <div class="card-content">
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="Web Development" />
+      <h3>Web Development Intern</h3>
+      <p>Duration: 3 Months | Location: Remote</p>
+      <button class="button toggle-btn">View More</button>
+      <div class="syllabus">
+        <h4>Responsibilities:</h4>
+        <ul>
+          <li>Build and optimize web applications</li>
+          <li>Collaborate with frontend/backend team</li>
+          <li>Deploy scalable features</li>
+        </ul>
+      </div>
+      <div class="enroll">
+        <a href="#" class="button">Apply Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <img src="https://abctrainings.in/media/thumbnails/machine_learning.jpeg" alt="ml" />
+      <h3>Machine Learning Intern</h3>
+      <p>Duration: 6 Months | Location: Hybrid</p>
+      <button class="button toggle-btn">View More</button>
+      <div class="syllabus">
+        <h4>Responsibilities:</h4>
+        <ul>
+          <li>Work on ML model training and tuning</li>
+          <li>Analyze large data sets</li>
+          <li>Deploy predictive analytics</li>
+        </ul>
+      </div>
+      <div class="enroll">
+        <a href="#" class="button">Apply Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-content">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" width="50" height="50" alt="UI/UX Design" />
+      <h3>UI/UX Design Intern</h3>
+      <p>Duration: 2 Months | Location: Remote</p>
+      <button class="button toggle-btn">View More</button>
+      <div class="syllabus">
+        <h4>Responsibilities:</h4>
+        <ul>
+          <li>Design clean and engaging UIs in Figma</li>
+          <li>Conduct user testing</li>
+          <li>Document and prototype wireframes</li>
+        </ul>
+      </div>
+      <div class="enroll">
+        <a href="#" class="button">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social">
+      <h1>Creators-Space</h1>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Twitter</a>
+    </div>
+    <div class="contact">
+      <h3>Contact</h3>
+      <p>Email: info@creatorsspace.com</p>
+      <p>Phone: +91 1234567890</p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your name" />
+      <input type="email" placeholder="Your email" />
+      <textarea rows="3" placeholder="Your message"></textarea>
+      <button>Submit</button>
+    </div>
+    <div class="copy">
+      <p>&copy; 2025 Creators-Space. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Dark Mode JS -->
+  <script>
+    const toggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    toggle.addEventListener('change', () => {
+      body.classList.toggle('dark');
+    });
+  </script>
+  <script>
+  document.querySelectorAll(".toggle-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".card");
+      card.classList.toggle("expanded");
+      btn.textContent = card.classList.contains("expanded") ? "View Less" : "View More";
+    });
+  });
+</script>
+
+</body>
+</html>
