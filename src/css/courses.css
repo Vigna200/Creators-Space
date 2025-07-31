@@ -676,3 +676,29 @@ body.dark .footer {
     gap: 30px;
   }
 }
+.remove-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background-color: #e63946;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.remove-btn:hover {
+  background-color: #d62828;
+}
+.bookmark-btn, .remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #444;
+  transition: color 0.2s ease;
+  
+}
+
+.bookmark-btn:hover, .remove-btn:hover {
+  color: #ff6b6b;
+}
