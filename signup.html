@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
+  <title>Sign Up</title>
   <style>
     * {
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
     body {
-      background: white;
+      background:  white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -21,14 +21,12 @@
       background: white;
       padding: 2rem;
       border-radius: 12px;
-      width: 100%;
+     width: 100%;
       max-width: 400px;
       box-shadow: 0 8px 150px rgba(0,0,0,0.15);
       border: 1px solid #ccc;
       font-weight: 500;
-}
-
-    
+    }
     h2 {
       text-align: center;
       margin-bottom: 1rem;
@@ -62,29 +60,6 @@
       color: red;
       margin-top: 5px;
     }
-    .checkbox-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-    .forgot-password {
-      display: block;
-      text-align: right;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: #007bff;
-      text-decoration: none;
-    }
-    .signup-page{ display: block;
-      text-align: center;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: #007bff;
-      text-decoration: none;
-
-    }
     .btn {
       width: 100%;
       padding: 10px;
@@ -112,6 +87,14 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+    .login-page {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #007bff;
+      text-decoration: none;
+    }
     .social-buttons {
       display: flex;
       gap: 10px;
@@ -130,8 +113,14 @@
 </head>
 <body>
   <div class="container">
-    <h2>Login</h2>
-    <form id="Login-form">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+        <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="name" required />
+        <div id="name" class="name"></div>
+      </div>
+
       <div class="form-group">
         <label>Email</label>
         <input type="email" id="email" required />
@@ -144,26 +133,19 @@
         <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
       </div>
 
-      <div class="checkbox-group">
-        <input type="checkbox" id="remember" />
-        <label for="remember">Remember Me</label>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="confirm-password" required />
+        <span class="toggle-password" onclick="togglePassword('confirm-password')">👁️</span>
+        <div id="matchFeedback" class="inline-feedback"></div>
       </div>
 
-      <a href="#" class="forgot-password">Forgot Password?</a>
-
-      <button type="submit" class="btn">Login</button>
+      <button type="submit" class="btn">Sign Up</button>
       <div class="spinner" id="spinner"></div>
 
-      <div class="signup-page">
-      <p>Don't have an account? <a href="signup.html"> Sign up</a></p>
+      <div class="login-page">
+        <p>Already have an account? <a href="login.html">Login</a></p>
       </div>
-
-      <div class="social-buttons">
-        <div class="social-btn">🔵 Instagram</div>
-        <div class="social-btn">⚫ Twitter</div>
-      </div>
-    </form>
-  </div>
 
   <script>
     function togglePassword(id) {
@@ -180,15 +162,13 @@
     const spinner = document.getElementById("spinner");
 
     confirmPassword.addEventListener("input", () => {
-      if (confirmPassword.value !== password.value) {
-        matchFeedback.textContent = "Passwords do not match";
-      } else {
-        matchFeedback.textContent = "";
-      }
+      matchFeedback.textContent = confirmPassword.value !== password.value
+        ? "Passwords do not match"
+        : "";
     });
 
     email.addEventListener("input", () => {
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const regex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
       emailFeedback.textContent = regex.test(email.value)
         ? ""
         : "Enter a valid email address";
@@ -197,7 +177,6 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Basic password strength check
       if (password.value.length < 6) {
         alert("Password must be at least 6 characters.");
         return;
@@ -208,13 +187,11 @@
         return;
       }
 
-      // Show spinner
       spinner.style.display = "block";
 
-      // Simulate form submission delay
       setTimeout(() => {
         spinner.style.display = "none";
-        alert("Form submitted successfully!");
+        alert("Account created successfully!");
         form.reset();
       }, 1500);
     });
