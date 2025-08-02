@@ -772,3 +772,26 @@ body.dark .testimonial-card {
   }
 }
 
+.bookmark-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.bookmark-btn i {
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: #fff;
+}

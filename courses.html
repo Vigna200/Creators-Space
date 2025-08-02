@@ -11,6 +11,11 @@
      <link rel="stylesheet" href="./src/css/utils.css">
     <link rel="stylesheet" href="./src/css/courses.css">
     <link rel="stylesheet" href="./src/css/responsive.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
   </head>
 
   <body id="main-body" class="overflow-x-hidden">
@@ -26,6 +31,7 @@
             <a href="internship.html">Internship</a>
             <a href="#">Campus Ambassador</a>
             <a href="#">Blog</a>
+            <a href="bookmarked.html">BookMarks</a>
             <a href="./login.html" class="btn login">Log In</a>
           <a href="./signup.html" class="btn signup">Sign Up</a>
       </div>
@@ -91,9 +97,13 @@
         <div class="enroll hidden">
           <button class="button">Enroll Now</button>
         </div>
+        <button class="bookmark-btn" onclick="toggleBookmark(event, this)" title="Bookmark this course">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
       </div>
 
       <div class="card" onclick="toggleSyllabus(this)">
+
         <div class="discount-badge">77% OFF</div>
         <div class="card-content">
           <img
@@ -117,6 +127,9 @@
         <div class="enroll hidden">
           <button class="button">Enroll Now</button>
         </div>
+        <button class="bookmark-btn" onclick="toggleBookmark(event, this)" title="Bookmark this course">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
       </div>
 
       <div class="card" onclick="toggleSyllabus(this)" >
@@ -143,6 +156,9 @@
         <div class="enroll hidden">
           <button class="button">Enroll Now</button>
         </div>
+        <button class="bookmark-btn" onclick="toggleBookmark(event, this)" title="Bookmark this course">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
       </div>
 
       <div class="card" onclick="toggleSyllabus(this)">
@@ -169,6 +185,9 @@
         <div class="enroll hidden">
           <button class="button">Enroll Now</button>
         </div>
+        <button class="bookmark-btn" onclick="toggleBookmark(event, this)" title="Bookmark this course">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
       </div>
 
       <div class="card" onclick="toggleSyllabus(this)">
@@ -195,6 +214,9 @@
         <div class="enroll hidden">
           <button class="button">Enroll Now</button>
         </div>
+        <button class="bookmark-btn" onclick="toggleBookmark(event, this)" title="Bookmark this course">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
       </div>
 
       <div class="card" onclick="toggleSyllabus(this)">
@@ -221,6 +243,9 @@
         <div class="enroll hidden">
           <button class="button">Enroll Now</button>
         </div>
+        <button class="bookmark-btn" onclick="toggleBookmark(event, this)" title="Bookmark this course">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
       </div>
     </section>
 
@@ -321,5 +346,6 @@
 
      <script src="./src/js/navbar.js"></script>
     <script src="./src/js/courses.js"></script>
+    <script src="./src/js/coursebm.js"></script>
   </body>
 </html>
