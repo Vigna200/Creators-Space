@@ -22,7 +22,7 @@ body {
   padding: 15px 10px;
   height: 85px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -102,7 +102,6 @@ body {
   font-weight: 500;
   color: white;
   transition: background-color 0.3s, color 0.3s;
-  
 }
 
 .navbar .btn.signup:hover {
@@ -227,6 +226,7 @@ body {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #39009c;
 }
 
 #webdev .info p {
@@ -518,7 +518,6 @@ body {
   cursor: pointer;
 }
 
-
 .testimonial-card img {
   width: 120px;
   border-radius: 50%;
@@ -640,7 +639,7 @@ body.dark .support a {
 
 /* Dark mode for navbar */
 body.dark .navbar {
-  background-color: rgba(24,24,24,0.6);
+  background-color: rgba(24, 24, 24, 0.6);
   border: 1px solid #444;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -770,28 +769,4 @@ body.dark .testimonial-card {
   .why-card {
     padding: 16px;
   }
-}
-
-.bookmark-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: #333;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.bookmark-btn i {
-  pointer-events: none;
-}
-
-.card {
-  position: relative;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background: #fff;
 }
