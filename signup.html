@@ -90,20 +90,23 @@
   <!-- Signup Box -->
   <div class="signup-container">
     <h2>Sign Up</h2>
-    <form>
-      <input type="text" placeholder="First Name" name="First Name" required>
-      <input type="text" placeholder="Last Name" name="Last Name" required>
-      <input type="text" placeholder="Username" required />
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="password" placeholder="Confirm password" name="confirm_password" required>
-        <!-- Terms and Conditions Checkbox -->
+    <form id="signup-form">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirm-password" placeholder="Confirm Password" required />
       <label style="font-size: 14px; display: block; margin-bottom: 15px; text-align: left;">
               <input type="checkbox" required />
               I agree to the <a href="#">Terms and conditions</a>
       </label>
       <button type="submit">Sign Up</button>
+
+  <!-- These lines will show feedback -->
+      <p id="error-message" style="color: red;"></p>
+      <p id="success-message" style="color: green;"></p>
     </form>
+
   </div>
+  <script src="src/js/formValidation.js"></script>
 </body>
 </html>
