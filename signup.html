@@ -79,7 +79,7 @@
       height: 24px;
       margin: 0 auto;
       border: 3px solid #f3f3f3;
-      border-top: 3px solid #007bff;
+      border-top: 3px solid black;
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin-top: 1rem;
@@ -168,8 +168,8 @@
     });
 
     email.addEventListener("input", () => {
-      const regex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-      emailFeedback.textContent = regex.test(email.value)
+     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     emailFeedback.textContent = regex.test(email.value)
         ? ""
         : "Enter a valid email address";
     });
@@ -186,6 +186,8 @@
         alert("Passwords do not match.");
         return;
       }
+      localStorage.setItem("userEmail", email.value);
+      localStorage.setItem("userPassword", password.value);
 
       spinner.style.display = "block";
 
@@ -194,6 +196,13 @@
         alert("Account created successfully!");
         form.reset();
       }, 1500);
+      setTimeout(() => {
+  spinner.style.display = "none";
+  alert("Account created successfully!");
+  form.reset();
+  window.location.href = "login.html"; // redirect to login page
+}, 1500);
+
     });
   </script>
 </body>
