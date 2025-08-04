@@ -186,8 +186,9 @@
         alert("Passwords do not match.");
         return;
       }
-      localStorage.setItem("userEmail", email.value);
-      localStorage.setItem("userPassword", password.value);
+     localStorage.setItem("email", email.value);
+     localStorage.setItem("password", password.value);
+  
 
       spinner.style.display = "block";
 
@@ -196,12 +197,8 @@
         alert("Account created successfully!");
         form.reset();
       }, 1500);
-      setTimeout(() => {
-  spinner.style.display = "none";
-  alert("Account created successfully!");
-  form.reset();
-  window.location.href = "login.html"; // redirect to login page
-}, 1500);
+   
+
 
     });
   </script>

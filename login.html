@@ -166,59 +166,52 @@
   </div>
 
   <script>
-    function togglePassword(id) {
-      const input = document.getElementById(id);
-      input.type = input.type === "password" ? "text" : "password";
-    }
+  function togglePassword(id) {
+    const input = document.getElementById(id);
+    input.type = input.type === "password" ? "text" : "password";
+  }
 
-    const form = document.getElementById("signup-form");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirm-password");
-    const email = document.getElementById("email");
-    const matchFeedback = document.getElementById("matchFeedback");
-    const emailFeedback = document.getElementById("emailFeedback");
-    const spinner = document.getElementById("spinner");
+  const form = document.getElementById("Login-form");
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+  const emailFeedback = document.getElementById("emailFeedback");
+  const spinner = document.getElementById("spinner");
 
-    confirmPassword.addEventListener("input", () => {
-      if (confirmPassword.value !== password.value) {
-        matchFeedback.textContent = "Passwords do not match";
+  // Validate email format live
+  email.addEventListener("input", () => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    emailFeedback.textContent = regex.test(email.value)
+      ? ""
+      : "Enter a valid email address";
+  });
+
+  // Login form submit
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    spinner.style.display = "block";
+
+    setTimeout(() => {
+      spinner.style.display = "none";
+
+      // Get stored credentials from localStorage
+      const storedEmail = localStorage.getItem("email");
+      const storedPassword = localStorage.getItem("password");
+
+      if (
+        email.value === storedEmail &&
+        password.value === storedPassword
+      ) {
+        alert("Login successful!");
+        window.location.href = "index.html"; // Redirect
       } else {
-        matchFeedback.textContent = "Login successful";
-        
-      }
-    });
-
-    email.addEventListener("input", () => {
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      emailFeedback.textContent = regex.test(email.value)
-        ? ""
-        : "Enter a valid email address";
-    });
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Basic password strength check
-      if (password.value.length < 6) {
-        alert("Password must be at least 6 characters.");
-        return;
+        alert("Invalid email or password.");
       }
 
-      if (password.value !== confirmPassword.value) {
-        alert("Passwords do not match.");
-        return;
-      }
+      form.reset();
+    }, 2000);
+  });
+</script>
 
-      // Show spinner
-      spinner.style.display = "block";
-
-      // Simulate form submission delay
-      setTimeout(() => {
-        spinner.style.display = "none";
-        alert("Form submitted successfully!");
-        form.reset();
-      }, 1500);
-    });
-  </script>
 </body>
 </html>
