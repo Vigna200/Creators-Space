@@ -191,7 +191,7 @@ body {
 }
 
 /* trending course */
-#webdev {
+/* #webdev {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -271,104 +271,112 @@ body {
   width: 50px;
   height: 50px;
   object-fit: cover;
-}
+} */
 
-/* courses */
-#courses {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap !important;
-}
-
-#courses h2 {
-  font-size: 36px;
-  font-weight: bold;
+  /* courses-heading */
+#our-course-h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
   text-align: center;
+  margin: 40px 0 20px;
+  color: #2575fc;
+  transition: 0.4s ease;
+}
+
+#our-course-h1:hover {
+  color: #240d64;
+}
+
+body.dark #our-course-h1 {
+  color: #00c6ff;
+}
+
+body.dark #our-course-h1:hover {
+  color: #ff512f;
+}
+
+  /* courses */
+/* COURSES SECTION */
+#courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+}
+
+/* Individual course box */
+.course {
+  background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
+  color: white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.course:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(255,255,255,0.1);
+}
+
+/* Image */
+.course img {
+  width: 120px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: contain;
   margin-bottom: 20px;
 }
 
-.course {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  /* border-radius: 10px; */
-  gap: 20px;
-  padding: 10px;
-  border: 1px solid black;
-  /* margin: 10px; */
-  height: 500px;
-  width: 50% !important;
-}
-
-.course img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.course-info {
-  display: flex;
-  flex-direction: column;
-  /* margin-left: 10px; */
-  /* width: 400px !important; */
-  align-items: center;
-}
-
+/* Course info */
 .course-info h3 {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 20px;
   margin-bottom: 10px;
-}
-
-.course-info p {
-  margin-bottom: 10px;
+  font-weight: 600;
+  color: #fff;
 }
 
 .course-info span {
-  color: red;
-  font-size: 24px;
-  margin-right: 10px;
+  font-size: 20px;
+  color: #ff4d4d;
+  font-weight: bold;
 }
 
 .course-info del {
+  color: #ccc;
   margin-left: 10px;
 }
 
+.course-info p {
+  margin-top: 8px;
+  color: #aaa;
+}
+
+/* Enroll button */
 .course-info button {
-  border: none;
-  outline: none;
-  background-color: blue;
-  color: white;
+  margin-top: 15px;
+  background-color: white;
+  color: #111;
   padding: 10px 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  border-radius: 5px;
-  width: 150px;
+  transition: 0.3s ease;
 }
 
 .course-info button:hover {
-  background-color: white;
-  color: blue;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
 }
 
-.course:not(.alter-course) {
-  background-color: black;
-  color: white;
-}
 
-.course:nth-child(odd) .course-info button {
-  background-color: white;
-  color: black;
-}
-
-.course:nth-child(odd) .course-info button:hover {
-  background-color: black;
-  color: white;
-}
 
 /* footer CSS */
 .footer {
@@ -679,7 +687,7 @@ body.dark .main {
 }
 
 /* Dark mode for courses */
-body.dark .course,
+/* body.dark .course,
 body.dark .course-info {
   background-color: #222 !important;
   color: #fff !important;
@@ -692,6 +700,24 @@ body.dark .course-info button {
 body.dark .course-info button:hover {
   background-color: black;
   color: #fff;
+} */
+
+/* DARK MODE OVERRIDE */
+body.dark .course {
+  background: linear-gradient(145deg, #111, #1d1d1d);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .course-info button {
+  background-color: #fff;
+  color: #000;
+}
+
+body.dark .course-info button:hover {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
 }
 
 /* Dark mode for footer */
