@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Internships | Creators-Space</title>
+  <title>Services | Creators-Space</title>
   <link rel="stylesheet" href="./src/css/courses.css">
+  <link rel="stylesheet" href="./src/css/services.css">
   <link rel="stylesheet" href="./src/css/style.css">
   <link rel="stylesheet" href="./src/css/utils.css">
   <link rel="stylesheet" href="./src/css/internship.css">
@@ -59,14 +60,15 @@
 
   <!-- MAIN SECTION -->
   <section class="main">
-    <h1>Exciting Internship Opportunities</h1>
-    <p>Launch your career with hands-on experience from top organizations.</p>
+    <h1>Our Services</h1>
+    <p>Empowering your journey with comprehensive career and technical guidance.</p>
   </section>
 
 
+
   <!-- INTERNSHIP CARDS -->
-  <div class="courses-container" id="internship-list">
-    <p>Loading internships...</p>
+  <div class="services-container" id="services-list">
+    <p>Loading services...</p>
   </div>
 
   <!-- Footer -->
@@ -143,74 +145,55 @@
 
   <!-- Dark Mode JS -->
   <script>
-    const toggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-    toggle.addEventListener('change', () => {
-      body.classList.toggle('dark');
+    async function loadServices() {
+  const container = document.getElementById("services-list");
+  try {
+    const res = await fetch("./src/data/services.json");
+    if (!res.ok) throw new Error("Failed to fetch");
+
+    const services = await res.json();
+    container.innerHTML = "";
+
+    services.forEach((service) => {
+      const featuresHTML = service.features
+        .map(feature => `<li>${feature}</li>`)
+        .join("");
+
+      const card = document.createElement("div");
+      card.className = "service-card";
+      card.innerHTML = `
+        <div class="service-content">
+          <img src="${service.icon}" alt="${service.title}" class="service-icon" />
+          <h3>${service.title}</h3>
+          <p>${service.description}</p>
+          <button class="button toggle-btn">Learn More</button>
+          <div class="service-features">
+            <h4>What's Included:</h4>
+            <ul>${featuresHTML}</ul>
+          </div>
+          <div class="cta-section">
+            <a href="${service.ctaLink}" class="button primary-btn">${service.ctaText}</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
     });
-  </script>
-  <script>
+
+    // Add toggle functionality
     document.querySelectorAll(".toggle-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const card = btn.closest(".card");
+        const card = btn.closest(".service-card");
         card.classList.toggle("expanded");
-        btn.textContent = card.classList.contains("expanded") ? "View Less" : "View More";
+        btn.textContent = card.classList.contains("expanded") ? "Show Less" : "Learn More";
       });
     });
-  </script>
-
-  <!-- Loading Internship dynamically from data/internship.json -->
-  <script>
-  async function loadInternships() {
-    const container = document.getElementById("internship-list");
-    try {
-      const res = await fetch("./src/data/internship.json");
-      if (!res.ok) throw new Error("Failed to fetch");
-
-      const internships = await res.json();
-      container.innerHTML = "";
-
-      internships.forEach((item) => {
-        const responsibilitiesHTML = item.responsibilities
-          .map(task => `<li>${task}</li>`)
-          .join("");
-
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-          <div class="card-content">
-            <img src="${item.image}" alt="${item.title}" />
-            <h3>${item.title}</h3>
-            <p>Company: ${item.company}</p>
-            <p>Duration: ${item.duration} | Location: ${item.type}</p>
-            <p>Stipend: ${item.stipend}</p>
-            <button class="button toggle-btn">View More</button>
-            <div class="syllabus">
-              <h4>Responsibilities:</h4>
-              <ul>${responsibilitiesHTML}</ul>
-            </div>
-            <div class="enroll">
-              <a href="${item.applyLink}" class="button">Apply Now</a>
-            </div>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-
-      document.querySelectorAll(".toggle-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const card = btn.closest(".card");
-          card.classList.toggle("expanded");
-          btn.textContent = card.classList.contains("expanded") ? "View Less" : "View More";
-        });
-      });
-    } catch (err) {
-      container.innerHTML = "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load the internships.</p>";
-      console.error("Error loading internships:", err);
-    }
+  } catch (err) {
+    container.innerHTML = "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load services.</p>";
+    console.error("Error loading services:", err);
   }
+}
 
-  window.addEventListener("DOMContentLoaded", loadInternships);
+window.addEventListener("DOMContentLoaded", loadServices);
 </script>
 
 
