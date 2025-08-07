@@ -184,13 +184,14 @@
             <p>Company: ${item.company}</p>
             <p>Duration: ${item.duration} | Location: ${item.type}</p>
             <p>Stipend: ${item.stipend}</p>
+            <div class="card-buttons">
             <button class="button toggle-btn">View More</button>
+            <a href="${item.applyLink}" class="button">Apply Now</a>
+          </div>
+          
             <div class="syllabus">
               <h4>Responsibilities:</h4>
               <ul>${responsibilitiesHTML}</ul>
-            </div>
-            <div class="enroll">
-              <a href="${item.applyLink}" class="button">Apply Now</a>
             </div>
           </div>
         `;
