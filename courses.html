@@ -38,14 +38,14 @@
     <!-- Navbar -->
     <div class="navbar">
 
-        <h1><a href="./">
-          <img width="80px" src="./assets/images/logo-nav.png" alt="logo Anurag Vishwakarma's Creators-Space">
+          <h1><a href="./">
+          <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
               <br>Creators-Space</a></h1>
         <div class="nav-links align-items-center">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="courses.html">Courses</a>
-            <a href="#">Services</a>
+            <a href="services.html" class="active">Services</a>
             <a href="internship.html">Internship</a>
             <a href="#">Campus Ambassador</a>
             <a href="blog.html">Blog</a>
@@ -371,5 +371,42 @@
 
     <script src="./src/js/navbar.js"></script>
     <script src="./src/js/courses.js"></script>
+   <script>
+  function toggleDarkMode() {
+    const element = document.getElementById("main-body");
+    const navbarLogo = document.getElementById("navbar-logo");
+
+    element.classList.toggle("dark");
+
+    // Change logo based on theme
+    if (element.classList.contains("dark")) {
+      navbarLogo.src = "./assets/images/logo-nav-dark.png";
+      localStorage.setItem("theme", "dark");
+    } else {
+      navbarLogo.src = "./assets/images/logo-nav-light.png";
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Apply saved theme & logo on page load
+  document.addEventListener("DOMContentLoaded", function () {
+    const savedTheme = localStorage.getItem("theme");
+    const element = document.getElementById("main-body");
+    const navbarLogo = document.getElementById("navbar-logo");
+    const toggleCheckbox = document.querySelector(".toggle-switch input");
+
+    if (savedTheme === "dark") {
+      element.classList.add("dark");
+      navbarLogo.src = "./assets/images/logo-nav-dark.png";
+      toggleCheckbox.checked = true;
+    } else {
+      element.classList.remove("dark");
+      navbarLogo.src = "./assets/images/logo-nav-light.png";
+      toggleCheckbox.checked = false;
+    }
+  });
+</script>
+
+
   </body>
 </html>

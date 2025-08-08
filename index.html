@@ -17,13 +17,15 @@
 <body id="main-body" class="overflow-x-hidden">
     <div class="navbar">
         <h1><a href="./">
-          <img width="80px" src="./assets/images/logo-nav.png" alt="logo Anurag Vishwakarma's Creators-Space">
+          <img id="navbar-logo" width="80px" src="./assets/images/logo-nav-light.png" alt="logo Creators-Space">
+
               <br>Creators-Space</a></h1>
         <div class="nav-links align-items-center">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="courses.html">Courses</a>
-            <a href="#">Services</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="active">Services</a>
             <a href="internship.html">Internship</a>
             <a href="#">Campus Ambassador</a>
             <a href="blog.html">Blog</a>
@@ -71,11 +73,16 @@
     </div>
 
     <div class="margin-top-5">
-        <center><h1>Our Courses</h1></center>
+        <center>
+          <div id="our-course-h1"><h1>Our Courses</h1>
+          </div></center>
 
-        <section id="webdev">
+        <!-- <section id="webdev">
+          <div class="webdev-container">
+          <img class="webdev-img" 
+                src="./assets/images/full-stack-web-developer.png" alt="laptop2"> -->
             <!-- <img src="webdev.png" alt="web development"> -->
-            <div class="icons"></div>
+            <!-- <div class="icons"></div>
             <div class="course-overlay">
              
             </div>
@@ -89,10 +96,22 @@
                 
               </div>
             </div>
-        </section>
+            </div>
+        </section> -->
 
           
         <section id="courses">
+              <div class="course">
+                 <img src="./assets/images/full-stack-web-developer.png" alt="Web Development">
+                <div class="course-info">
+                  <h3>Web Development</h3>
+                  <span>₹12,999</span><del>₹49,999</del>
+                  <p>Duration: 6 Months</p>
+                  <button>Enroll Now</button>
+                     </div>
+             </div>
+
+          
         
             <!-- <h2>Our Courses</h2> -->
             <div class="course">
@@ -114,7 +133,7 @@
               </div>
             </div>
             <div class="course alter-course">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="ui/ux design">
+              <img src="https://cdn.dribbble.com/users/41543/screenshots/8954776/figma_logo_template_4x.png" alt="ui/ux design">
               <div class="course-info">
               <h3>UI/UX Design</h3>
               <span>₹4,999</span><del>₹19,999</del>
@@ -123,7 +142,7 @@
               </div>
             </div>
             <div class="course">
-              <img src="https://www.netwale.com/wp-content/uploads/2023/08/graphiv-design-course.jpg" alt="graphic design">
+              <img src="https://i.pinimg.com/originals/11/bf/bf/11bfbf627df75cd22873be0d15472cc4.jpg" alt="graphic design">
               <div class="course-info">
               <h3>Graphic Design</h3>
               <span>₹7,999</span><del>₹29,999</del>
@@ -250,7 +269,11 @@
             <p>Copyright &copy; 2024 - 2025 Creators-Space. All rights reserved.</p>
         </div>
     </footer>
-    <button id="scrollTopBtn" title="Back to Top">↑</button>
+    <!-- Added Svg arrow  -->
+    <button id="scrollTopBtn" title="Back to Top">
+  <!-- added svg of arrow up -->
+    <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 32 32"><path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"/></svg>
+</button> 
 
 
 
@@ -259,6 +282,49 @@
     <script src="./src/js/slider.js"></script>
     <script src="./src/js/scrollToTop.js"></script>
     <script src="./src/js/utils.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Chatbot Test</title>
+  <style>
+    .chatbot { padding: 20px; border: 1px solid #ccc; max-width: 400px; margin: auto; }
+    .chat-body { height: 150px; overflow-y: auto; margin-bottom: 10px; }
+    .bot-message, .user-message { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <div class="chatbot-container">
+  <button class="chatbot-toggle" aria-label="Open chat">💬</button>
+  <div class="chatbot-window" role="dialog" aria-label="Chat window">
+    <div class="chat-body" id="chat-body">
+      <div class="bot-message">Hi! How can I help you today?</div>
+    </div>
+    <input type="text" id="user-input" placeholder="Type your message..." />
+    <button onclick="handleUserInput()">Send</button>
+  </div>
+</div>
+  <script>
+    function handleUserInput() {
+      const input = document.getElementById("user-input").value;
+      if (!input) return;
+      const chatBody = document.getElementById("chat-body");
+      const userMsg = document.createElement("div");
+      userMsg.className = "user-message";
+      userMsg.textContent = input;
+      chatBody.appendChild(userMsg);
 
+      const botMsg = document.createElement("div");
+      botMsg.className = "bot-message";
+      botMsg.textContent = "Thanks for your question!";
+      chatBody.appendChild(botMsg);
+
+      document.getElementById("user-input").value = "";
+    }
+  </script>
+</body>
+</html>
 </body>
 </html>
