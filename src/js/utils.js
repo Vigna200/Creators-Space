@@ -1,3 +1,12 @@
+
+function toggleDarkMode() {
+    const element = document.getElementById("main-body");
+    
+    console.log(document.getElementById('main-body'));
+    element.classList.toggle("dark")
+
+}
+
 function toggleDarkMode() {
     const element = document.getElementById("main-body");
     const logo = document.getElementById("navbar-logo"); // Get logo element
