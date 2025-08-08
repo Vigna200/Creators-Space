@@ -168,6 +168,60 @@
    <script src="./src/js/navbar.js"></script>
    <script src="./src/js/utils.js"></script>
 
+
+  <!-- Loading Internship dynamically from data/internship.json -->
+  <script>
+  async function loadInternships() {
+    const container = document.getElementById("internship-list");
+    try {
+      const res = await fetch("./src/data/internship.json");
+      if (!res.ok) throw new Error("Failed to fetch");
+
+      const internships = await res.json();
+      container.innerHTML = "";
+
+      internships.forEach((item) => {
+        const responsibilitiesHTML = item.responsibilities
+          .map(task => `<li>${task}</li>`)
+          .join("");
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-content">
+            <img src="${item.image}" alt="${item.title}" />
+            <h3>${item.title}</h3>
+            <p>Company: ${item.company}</p>
+            <p>Duration: ${item.duration} | Location: ${item.type}</p>
+            <p>Stipend: ${item.stipend}</p>
+            <div class="card-buttons">
+            <button class="button toggle-btn">View More</button>
+            <a href="${item.applyLink}" class="button">Apply Now</a>
+          </div>
+          
+            <div class="syllabus">
+              <h4>Responsibilities:</h4>
+              <ul>${responsibilitiesHTML}</ul>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      document.querySelectorAll(".toggle-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const card = btn.closest(".card");
+          card.classList.toggle("expanded");
+          btn.textContent = card.classList.contains("expanded") ? "View Less" : "View More";
+        });
+      });
+    } catch (err) {
+      container.innerHTML = "<p style='color:red;text-align:center;font-size:20px;'>Couldn't load the internships.</p>";
+      console.error("Error loading internships:", err);
+         }
+  });
+</script>
+
   <!-- Dark Mode JS -->
  <script>
   const toggle = document.getElementById('dark-mode-toggle');
@@ -182,6 +236,7 @@
       navbarLogo.src = "./assets/images/logo-nav-dark.png"; // Dark mode logo
     } else {
       navbarLogo.src = "./assets/images/logo-nav-light.png"; // Light mode logo
+
     }
   });
 </script>
