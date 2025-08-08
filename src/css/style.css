@@ -547,24 +547,63 @@ body.dark #our-course-h1:hover {
 }
 
 /* Scroll to top */
-#scrollTopBtn {
-  display: none;
+#scrollTopBtn { 
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  font-size: 20px;
-  background-color: #6f6f6b;
-  color: white;
+  bottom: 65px;
+  right: 30px;
+  z-index: 999; 
   border: none;
+  outline: none;
+  background-color: #0a0a0a;
+  color: white;
+  cursor: pointer;
   padding: 10px 15px;
   border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow:  0 12px 20px rgba(20, 5, 158, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  /* initially at bottom */
+  transform: translateY(65px);
 }
 
-#scrollTopBtn:hover {
-  background-color: #333;
+#scrollTopBtn svg{
+  width: 24px;
+  height: 24px;
+  transition: transform 0.4s ease;
+  fill: white;
+  position: relative;
+  top: 4px;
+}
+#scrollTopBtn.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+
+}
+#scrollTopBtn:hover{
+  background-color: #093586;
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 0 10px rgba(14 , 39 , 182 , 0.4);
+}
+#scrollTopBtn:hover svg{
+  transform: scale(1.1);
+  top: 0;
+}
+
+/* bounce animation added to back to top */
+@keyframes bounce {
+  0% , 100%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-6px);
+  }
+}
+
+/* apply bounce when not hover  */
+#scrollTopBtn.bounce:not(:hover) svg{
+  animation: bounce 2s infinite;
 }
 
 /* Dark Mode Switch Styles  */
