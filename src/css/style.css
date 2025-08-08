@@ -53,7 +53,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.navbar .nav-links a:nth-child(-n + 6)::after {
+.navbar .nav-links a:nth-child(-n + 7)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -64,7 +64,7 @@ body {
   transition: width 0.3s ease;
 }
 
-.navbar .nav-links a:nth-child(-n + 6):hover::after {
+.navbar .nav-links a:nth-child(-n + 7):hover::after {
   width: 100%;
 }
 
